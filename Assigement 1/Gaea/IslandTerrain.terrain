@@ -22,7 +22,7 @@
             "515": {
               "$id": "7",
               "$type": "QuadSpinner.Gaea.Nodes.File, Gaea.Nodes",
-              "FileName": "F:\\Letöltések\\Buzonia 2026-03-22-13-50.png",
+              "FileName": "F:\\Letöltések\\Chinurland 2026-03-22-14-51.png",
               "Id": 515,
               "Name": "File",
               "Position": {
@@ -57,26 +57,572 @@
                 "$id": "12",
                 "$values": []
               }
+            },
+            "608": {
+              "$id": "13",
+              "$type": "QuadSpinner.Gaea.Nodes.Blur, Gaea.Nodes",
+              "Radius": 0.02284352,
+              "Id": 608,
+              "Name": "Blur",
+              "Position": {
+                "$id": "14",
+                "X": 26559.668,
+                "Y": 25957.834
+              },
+              "Ports": {
+                "$id": "15",
+                "$values": [
+                  {
+                    "$id": "16",
+                    "Name": "In",
+                    "Type": "PrimaryIn, Required",
+                    "Record": {
+                      "$id": "17",
+                      "From": 515,
+                      "To": 608,
+                      "FromPort": "Out",
+                      "ToPort": "In",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "13"
+                    }
+                  },
+                  {
+                    "$id": "18",
+                    "Name": "Out",
+                    "Type": "PrimaryOut",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "13"
+                    }
+                  }
+                ]
+              },
+              "Modifiers": {
+                "$id": "19",
+                "$values": []
+              }
+            },
+            "592": {
+              "$id": "20",
+              "$type": "QuadSpinner.Gaea.Nodes.Perlin, Gaea.Nodes",
+              "Type": "Ridged",
+              "Scale": 0.0,
+              "Seed": 62286,
+              "Id": 592,
+              "Name": "Perlin",
+              "Position": {
+                "$id": "21",
+                "X": 26547.002,
+                "Y": 26222.916
+              },
+              "Ports": {
+                "$id": "22",
+                "$values": [
+                  {
+                    "$id": "23",
+                    "Name": "In",
+                    "Type": "PrimaryIn",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "20"
+                    }
+                  },
+                  {
+                    "$id": "24",
+                    "Name": "Out",
+                    "Type": "PrimaryOut",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "20"
+                    }
+                  }
+                ]
+              },
+              "Modifiers": {
+                "$id": "25",
+                "$values": []
+              }
+            },
+            "245": {
+              "$id": "26",
+              "$type": "QuadSpinner.Gaea.Nodes.Combine, Gaea.Nodes",
+              "PortCount": 2,
+              "Ratio": 0.5036563,
+              "Mode": "Multiply",
+              "Id": 245,
+              "Name": "Combine",
+              "NodeSize": "Compact",
+              "Position": {
+                "$id": "27",
+                "X": 26914.826,
+                "Y": 26115.25
+              },
+              "Ports": {
+                "$id": "28",
+                "$values": [
+                  {
+                    "$id": "29",
+                    "Name": "In",
+                    "Type": "PrimaryIn, Required",
+                    "Record": {
+                      "$id": "30",
+                      "From": 608,
+                      "To": 245,
+                      "FromPort": "Out",
+                      "ToPort": "In",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "26"
+                    }
+                  },
+                  {
+                    "$id": "31",
+                    "Name": "Out",
+                    "Type": "PrimaryOut",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "26"
+                    }
+                  },
+                  {
+                    "$id": "32",
+                    "Name": "Input2",
+                    "Type": "In",
+                    "Record": {
+                      "$id": "33",
+                      "From": 592,
+                      "To": 245,
+                      "FromPort": "Out",
+                      "ToPort": "Input2",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "26"
+                    }
+                  },
+                  {
+                    "$id": "34",
+                    "Name": "Mask",
+                    "Type": "In",
+                    "Record": {
+                      "$id": "35",
+                      "From": 904,
+                      "To": 245,
+                      "FromPort": "Out",
+                      "ToPort": "Mask",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "26"
+                    }
+                  }
+                ]
+              },
+              "Modifiers": {
+                "$id": "36",
+                "$values": [
+                  {
+                    "$id": "37",
+                    "$type": "QuadSpinner.Gaea.Nodes.Modifiers.Multiplier, Gaea.Nodes",
+                    "Value": {
+                      "$id": "38",
+                      "Y": 0.14236706
+                    },
+                    "Name": "Multiplier",
+                    "Parent": {
+                      "$ref": "26"
+                    },
+                    "HasUI": true,
+                    "Intrinsic": true
+                  },
+                  {
+                    "$id": "39",
+                    "$type": "QuadSpinner.Gaea.Nodes.Modifiers.Shaper, Gaea.Nodes",
+                    "Shape": -0.74310344,
+                    "Name": "Shaper",
+                    "Parent": {
+                      "$ref": "26"
+                    },
+                    "HasUI": true,
+                    "Intrinsic": true,
+                    "Order": 1
+                  }
+                ]
+              }
+            },
+            "904": {
+              "$id": "40",
+              "$type": "QuadSpinner.Gaea.Nodes.Height, Gaea.Nodes",
+              "Range": {
+                "$id": "41",
+                "X": 0.9082734,
+                "Y": 1.0
+              },
+              "Falloff": 0.39768365,
+              "Id": 904,
+              "Name": "Height",
+              "Position": {
+                "$id": "42",
+                "X": 26547.002,
+                "Y": 26099.25
+              },
+              "Ports": {
+                "$id": "43",
+                "$values": [
+                  {
+                    "$id": "44",
+                    "Name": "In",
+                    "Type": "PrimaryIn, Required",
+                    "Record": {
+                      "$id": "45",
+                      "From": 515,
+                      "To": 904,
+                      "FromPort": "Out",
+                      "ToPort": "In",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "40"
+                    }
+                  },
+                  {
+                    "$id": "46",
+                    "Name": "Out",
+                    "Type": "PrimaryOut",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "40"
+                    }
+                  }
+                ]
+              },
+              "Modifiers": {
+                "$id": "47",
+                "$values": []
+              }
+            },
+            "839": {
+              "$id": "48",
+              "$type": "QuadSpinner.Gaea.Nodes.FractalTerraces, Gaea.Nodes",
+              "Seed": 2492,
+              "TiltSeed": 28193,
+              "Id": 839,
+              "Name": "FractalTerraces",
+              "Position": {
+                "$id": "49",
+                "X": 27198.986,
+                "Y": 26131.25
+              },
+              "Ports": {
+                "$id": "50",
+                "$values": [
+                  {
+                    "$id": "51",
+                    "Name": "In",
+                    "Type": "PrimaryIn, Required",
+                    "Record": {
+                      "$id": "52",
+                      "From": 245,
+                      "To": 839,
+                      "FromPort": "Out",
+                      "ToPort": "In",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "48"
+                    }
+                  },
+                  {
+                    "$id": "53",
+                    "Name": "Out",
+                    "Type": "PrimaryOut",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "48"
+                    }
+                  },
+                  {
+                    "$id": "54",
+                    "Name": "Layers",
+                    "Type": "Out",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "48"
+                    }
+                  },
+                  {
+                    "$id": "55",
+                    "Name": "Modulation",
+                    "Type": "In",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "48"
+                    }
+                  }
+                ]
+              },
+              "Modifiers": {
+                "$id": "56",
+                "$values": []
+              }
+            },
+            "958": {
+              "$id": "57",
+              "$type": "QuadSpinner.Gaea.Nodes.Erosion2, Gaea.Nodes",
+              "Duration": 11.555,
+              "Downcutting": 0.4604723,
+              "Seed": 846,
+              "Shape": 0.32833675,
+              "Id": 958,
+              "Version": 2,
+              "Name": "Erosion2",
+              "Position": {
+                "$id": "58",
+                "X": 27494.664,
+                "Y": 26123.25
+              },
+              "Ports": {
+                "$id": "59",
+                "$values": [
+                  {
+                    "$id": "60",
+                    "Name": "In",
+                    "Type": "PrimaryIn, Required",
+                    "Record": {
+                      "$id": "61",
+                      "From": 839,
+                      "To": 958,
+                      "FromPort": "Out",
+                      "ToPort": "In",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "57"
+                    }
+                  },
+                  {
+                    "$id": "62",
+                    "Name": "Out",
+                    "Type": "PrimaryOut",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "57"
+                    }
+                  },
+                  {
+                    "$id": "63",
+                    "Name": "Precipitation",
+                    "Type": "In",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "57"
+                    }
+                  },
+                  {
+                    "$id": "64",
+                    "Name": "Flow",
+                    "Type": "Out",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "57"
+                    }
+                  },
+                  {
+                    "$id": "65",
+                    "Name": "Wear",
+                    "Type": "Out",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "57"
+                    }
+                  },
+                  {
+                    "$id": "66",
+                    "Name": "Deposits",
+                    "Type": "Out",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "57"
+                    }
+                  }
+                ]
+              },
+              "Modifiers": {
+                "$id": "67",
+                "$values": []
+              }
+            },
+            "700": {
+              "$id": "68",
+              "$type": "QuadSpinner.Gaea.Nodes.Sea, Gaea.Nodes",
+              "Level": 0.06489944,
+              "ShoreSize": 0.02175503,
+              "ShoreHeight": 0.13601463,
+              "Id": 700,
+              "Name": "Sea",
+              "Position": {
+                "$id": "69",
+                "X": 27838.602,
+                "Y": 26123.25
+              },
+              "IsLocked": true,
+              "Ports": {
+                "$id": "70",
+                "$values": [
+                  {
+                    "$id": "71",
+                    "Name": "In",
+                    "Type": "PrimaryIn, Required",
+                    "Record": {
+                      "$id": "72",
+                      "From": 958,
+                      "To": 700,
+                      "FromPort": "Out",
+                      "ToPort": "In",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "68"
+                    }
+                  },
+                  {
+                    "$id": "73",
+                    "Name": "Out",
+                    "Type": "PrimaryOut",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "68"
+                    }
+                  },
+                  {
+                    "$id": "74",
+                    "Name": "Edge",
+                    "Type": "In",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "68"
+                    }
+                  },
+                  {
+                    "$id": "75",
+                    "Name": "Water",
+                    "Type": "Out",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "68"
+                    }
+                  },
+                  {
+                    "$id": "76",
+                    "Name": "Depth",
+                    "Type": "Out",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "68"
+                    }
+                  },
+                  {
+                    "$id": "77",
+                    "Name": "Shore",
+                    "Type": "Out",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "68"
+                    }
+                  },
+                  {
+                    "$id": "78",
+                    "Name": "Surface",
+                    "Type": "Out",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "68"
+                    }
+                  }
+                ]
+              },
+              "Modifiers": {
+                "$id": "79",
+                "$values": []
+              }
+            },
+            "483": {
+              "$id": "80",
+              "$type": "QuadSpinner.Gaea.Nodes.Unity, Gaea.Nodes",
+              "PortCount": 1,
+              "Id": 483,
+              "Name": "Unity",
+              "Position": {
+                "$id": "81",
+                "X": 28128.3,
+                "Y": 26153.25
+              },
+              "Ports": {
+                "$id": "82",
+                "$values": [
+                  {
+                    "$id": "83",
+                    "Name": "In",
+                    "Type": "PrimaryIn, Required",
+                    "Record": {
+                      "$id": "84",
+                      "From": 700,
+                      "To": 483,
+                      "FromPort": "Out",
+                      "ToPort": "In",
+                      "IsValid": true
+                    },
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "80"
+                    }
+                  },
+                  {
+                    "$id": "85",
+                    "Name": "Out",
+                    "Type": "PrimaryOut",
+                    "IsExporting": true,
+                    "Parent": {
+                      "$ref": "80"
+                    }
+                  }
+                ]
+              },
+              "Modifiers": {
+                "$id": "86",
+                "$values": []
+              }
             }
           },
           "Groups": {
-            "$id": "13"
+            "$id": "87"
           },
           "Notes": {
-            "$id": "14"
+            "$id": "88"
           },
           "GraphTabs": {
-            "$id": "15",
+            "$id": "89",
             "$values": [
               {
-                "$id": "16",
+                "$id": "90",
                 "Name": "Graph 1",
                 "Color": "Brass",
-                "ZoomFactor": 1.0,
+                "ZoomFactor": 0.5000000000000004,
                 "ViewportLocation": {
-                  "$id": "17",
-                  "X": 26000.0,
-                  "Y": 26000.0
+                  "$id": "91",
+                  "X": 25969.27,
+                  "Y": 25723.951
                 }
               }
             ]
@@ -85,64 +631,66 @@
           "Height": 2500.0,
           "Ratio": 0.5,
           "Regions": {
-            "$id": "18",
+            "$id": "92",
             "$values": []
           }
         },
         "Automation": {
-          "$id": "19",
+          "$id": "93",
           "Bindings": {
-            "$id": "20",
+            "$id": "94",
             "$values": []
           },
           "Expressions": {
-            "$id": "21"
+            "$id": "95"
           },
           "Variables": {
-            "$id": "22"
+            "$id": "96"
           }
         },
         "BuildDefinition": {
-          "$id": "23",
+          "$id": "97",
           "Type": "Standard",
           "Destination": "<Builds>\\[Filename]\\[+++]",
           "Resolution": 1024,
           "BakeResolution": 2048,
           "TileResolution": 1024,
           "BucketResolution": 2048,
-          "NumberOfTiles": 3,
+          "NumberOfTiles": 1,
           "EdgeBlending": 0.25,
           "TileZeroIndex": true,
           "TilePattern": "_y%Y%_x%X%",
           "OrganizeFiles": "NodeSubFolder",
+          "PostBuildScript": "",
           "ColorSpace": "sRGB"
         },
         "State": {
-          "$id": "24",
+          "$id": "98",
           "BakeResolution": 2048,
           "PreviewResolution": 1024,
           "HDResolution": 4096,
-          "SelectedNode": 515,
+          "SelectedNode": 245,
           "NodeBookmarks": {
-            "$id": "25",
+            "$id": "99",
             "$values": []
           },
           "Viewport": {
-            "$id": "26",
+            "$id": "100",
             "CameraPosition": {
-              "$id": "27",
+              "$id": "101",
               "$values": []
             },
             "Camera": {
-              "$id": "28"
+              "$id": "102"
             },
             "RenderMode": "Realistic",
             "AmbientOcclusion": true,
             "Shadows": true
-          }
+          },
+          "LockedNode": 700
         },
         "BuildProfiles": {
-          "$id": "29"
+          "$id": "103"
         }
       }
     ]
@@ -150,7 +698,7 @@
   "Id": "077ccff7",
   "Branch": 1,
   "Metadata": {
-    "$id": "30",
+    "$id": "104",
     "Name": "",
     "Description": "",
     "Version": "2.2.9.0",
