@@ -1,6 +1,4 @@
 ﻿<Solution>
-  <Project Path="MTree.Editor.csproj" />
-  <Project Path="MTree.Runtime.csproj" />
   <Project Path="sc.terrain.painter.editor.csproj" />
   <Project Path="sc.vegetationspawner.runtime.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
